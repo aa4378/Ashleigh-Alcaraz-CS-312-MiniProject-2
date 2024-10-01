@@ -1,0 +1,15 @@
+<h1>Cocktail: <%= drink.strDrink %></h1>
+<img src="<%= drink.strDrinkThumb %>" alt="Image of <%= drink.strDrink %>" style="width:200px;">
+<p><strong>Type of drink:</strong> <%= drink.strCategory %></p>
+<p><strong>How to make it:</strong> <%= drink.strInstructions %></p>
+
+<h3>Ingredients:</h3>
+<ul>
+  <% for (let index = 1; index <= 15; index++) { %>
+    <% if (drink['strIngredient' + index]) { %>
+      <li><%= drink['strIngredient' + index] %> - <%= drink['strMeasure' + index] %></li>
+    <% } %>
+  <% } %>
+</ul>
+
+<a href="/">Search for another drink</a>
